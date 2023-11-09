@@ -1,3 +1,8 @@
+# Note
+This is a fork that modifies the original [local-cors-proxy](https://github.com/garmeeh/local-cors-proxy) to accept a full URL via encoded URI.
+
+For example, instead of using 
+
 # Local CORS Proxy
 
 Simple proxy to bypass CORS issues. This was built as a local dev only solution to enable prototyping against existing APIs without having to worry about CORS.
@@ -25,22 +30,23 @@ https://www.yourdomain.ie/movies/list
 Start Proxy:
 
 ```
-lcp --proxyUrl https://www.yourdomain.ie
+lcp 
 ```
 
-Then in your client code, new API endpoint:
+Then in your client code, new API endpoint using encodeURIComponent:
 
 ```
-http://localhost:8010/proxy/movies/list
+http://localhost:8010/https%3A%2F%2Fwww.yourdomain.ie%2Fmovies%2Flist
 ```
 
 End result will be a request to `https://www.yourdomain.ie/movies/list` without the CORS issues!
 
+**Install Locally**
 Alternatively you can install the package locally and add a script to your project:
 
 ```json
  "scripts": {
-   "proxy": "lcp --proxyUrl https://www.yourdomain.ie"
+   "proxy": "lcp"
  }
 ```
 
@@ -48,8 +54,6 @@ Alternatively you can install the package locally and add a script to your proje
 
 | Option         | Example               | Default |
 | -------------- | --------------------- | ------: |
-| --proxyUrl     | https://www.google.ie |         |
-| --proxyPartial | foo                   |   proxy |
 | --port         | 8010                  |    8010 |
 | --credentials  | (no value needed)     |   false |
 | --origin       | http://localhost:4200 |       * |

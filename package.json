@@ -1,6 +1,6 @@
 {
-  "name": "local-cors-proxy",
-  "version": "1.1.0",
+  "name": "local-cors-proxy-encoded",
+  "version": "1.1.1",
   "main": "./lib/index.js",
   "scripts": {
     "start": "node ./bin/lcp.js",
@@ -9,7 +9,7 @@
   "bin": {
     "lcp": "./bin/lcp.js"
   },
-  "author": "Gary Meehan",
+  "author": "Gary Meehan & Brian Tucker",
   "license": "MIT",
   "repository": {
     "type": "git",
