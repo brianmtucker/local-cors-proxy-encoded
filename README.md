@@ -1,7 +1,9 @@
 # Note
 This is a fork that modifies the original [local-cors-proxy](https://github.com/garmeeh/local-cors-proxy) to accept a full URL via encoded URI.
+
 You can encode your URLs using something like
-```const url = 'http://localhost:8010/?' + encodeURIComponent('https://www.url-to-proxy...');```
+
+```const url = 'http://localhost:8010/' + encodeURIComponent('https://www.url-to-proxy...');```
 
 # Local CORS Proxy
 
